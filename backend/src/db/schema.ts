@@ -34,7 +34,7 @@ export const ContentModel = model("Content", ContentSchema);
 
 const LinkSchema = new Schema({
   hash: { type: String, required: true },
-  userId: { type: Types.ObjectId, ref: "User" },
+  userId: { type: Types.ObjectId, ref: "User", unique: true },
 });
 
 export const LinkModel = model("Link", LinkSchema);

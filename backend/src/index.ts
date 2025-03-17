@@ -187,6 +187,7 @@ app.get("/api/v1/:sharelink", async (req, res) => {
     res.status(411).json({
       message: "Invalid Link",
     });
+    return;
   }
 
   const user = await UserModel.findOne({
@@ -194,7 +195,7 @@ app.get("/api/v1/:sharelink", async (req, res) => {
   });
 
   const content = await ContentModel.find({
-    userId: link?.userId,
+    userId: link.userId,
   });
 
   res.json({

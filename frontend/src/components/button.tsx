@@ -6,7 +6,7 @@ interface ButtonProps {
   text: string;
   startIcon?: ReactElement;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const buttonVariants = {
@@ -27,9 +27,10 @@ const sizeVariants = {
 export const Button = (props: ButtonProps) => {
   return (
     <button
+      onClick={props.onClick}
       className={`${buttonVariants[props.variant]} ${
         sizeVariants[props.size]
-      } ${props.className}`}
+      } ${props.className} flex justify-center items-center`}
     >
       {props.startIcon} {props.text}
     </button>
