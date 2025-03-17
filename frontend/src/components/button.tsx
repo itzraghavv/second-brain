@@ -7,6 +7,7 @@ interface ButtonProps {
   startIcon?: ReactElement;
   className?: string;
   onClick?: () => void;
+  loading?: boolean;
 }
 
 const buttonVariants = {
@@ -24,15 +25,23 @@ const sizeVariants = {
   lg: "px-8 py-3 rounded-lg",
 };
 
-export const Button = (props: ButtonProps) => {
+export const Button = ({
+  variant,
+  size,
+  text,
+  startIcon,
+  className,
+  onClick,
+  loading,
+}: ButtonProps) => {
   return (
     <button
-      onClick={props.onClick}
-      className={`${buttonVariants[props.variant]} ${
-        sizeVariants[props.size]
-      } ${props.className} flex justify-center items-center`}
+      onClick={onClick}
+      className={`${buttonVariants[variant]} ${sizeVariants[size]} ${className} flex justify-center items-center`}
+      disabled={loading}
     >
-      {props.startIcon} {props.text}
+      <div className="mr-2">{startIcon}</div>
+      {text}
     </button>
   );
 };
