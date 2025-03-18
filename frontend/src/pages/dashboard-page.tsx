@@ -41,8 +41,7 @@ export const DashboardPage = () => {
         <div className="flex gap-4 p-3 flex-wrap">
           {content.map(({ _id, type, title, link }) => (
             <>
-              <Card key={_id} type="youtube" title={title} link={link} />
-              <Card key={_id} type="twitter" title={title} link={link} />
+              <Card key={_id} type={type} title={title} link={link} />
             </>
           ))}
         </div>

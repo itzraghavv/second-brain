@@ -16,8 +16,9 @@ export const AddContentModal = ({ open, onClick }: ModalProps) => {
 
   const createPost = () => {
     const title = titleRef.current?.value;
+    const type = typeRef.current?.value;
     const link = linkRef.current?.value;
-    CreatePost(title, link);
+    CreatePost(title, type.toLowerCase(), link);
   };
 
   return (
@@ -33,7 +34,11 @@ export const AddContentModal = ({ open, onClick }: ModalProps) => {
               </div>
               <div className="flex flex-col items-center">
                 Add Content
-                <Input reference={titleRef} type="text" placeholder="Title" />
+                <Input
+                  reference={titleRef}
+                  type="text"
+                  placeholder="Enter title"
+                />
                 <Input
                   reference={linkRef}
                   type="text"

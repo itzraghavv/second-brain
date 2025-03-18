@@ -79,12 +79,11 @@ app.post("/api/v1/sign-in", async (req, res) => {
 });
 
 app.post("/api/v1/content", auth, async (req, res) => {
-  const title = req.body.title;
-  const link = req.body.link;
-  
+  const { title, type, link } = req.body;
 
   await ContentModel.create({
     title,
+    type,
     link,
     userId: req.userId,
     tag: [],
