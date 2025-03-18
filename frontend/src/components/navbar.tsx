@@ -1,10 +1,11 @@
 import { BrainIcon, Menu } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "./button";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="flex justify-between items-center p-4 sm:p-6 lg:px-12 shadow-sm bg-white">
@@ -21,9 +22,18 @@ export const Navbar = () => {
           variant="secondary"
           size="md"
           text="Sign In"
-          onClick={() => {}}
+          onClick={() => {
+            navigate("/sign-in");
+          }}
         />
-        <Button variant="primary" size="md" text="Sign Up" onClick={() => {}} />
+        <Button
+          variant="primary"
+          size="md"
+          text="Sign Up"
+          onClick={() => {
+            navigate("/sign-up");
+          }}
+        />
       </div>
 
       <button

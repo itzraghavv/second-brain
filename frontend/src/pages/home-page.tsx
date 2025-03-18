@@ -9,7 +9,7 @@ export const HomePage = () => {
 
   const handleSubmit = () => {
     navigate("/sign-in");
-    console.log("cl")
+    console.log("cl");
   };
 
   return (
@@ -32,12 +32,14 @@ export const HomePage = () => {
               Brain, the all-in-one platform that helps you collect, organize,
               and connect your digital life.
             </p>
-            <Button
-              variant="primary"
-              text="Get Started"
-              size="lg"
-              onClick={handleSubmit}
-            />
+            <div className="flex justify-center">
+              <Button
+                variant="primary"
+                text="Get Started"
+                size="lg"
+                onClick={handleSubmit}
+              />
+            </div>
           </div>
         </section>
 
@@ -96,12 +98,14 @@ export const HomePage = () => {
               Join thousands of users who have transformed how they manage
               information.
             </p>
-            <Button
-              variant="primary"
-              text="Get Started For Free"
-              size="lg"
-              onClick={handleSubmit}
-            />
+            <div className="flex justify-center">
+              <Button
+                variant="primary"
+                text="Get Started For Free"
+                size="lg"
+                onClick={handleSubmit}
+              />
+            </div>
           </div>
         </section>
       </main>

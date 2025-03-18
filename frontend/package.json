@@ -12,10 +12,13 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.11",
     "axios": "^1.8.3",
+    "get-youtube-id": "^1.0.1",
     "lucide-react": "^0.482.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.30.0",
+    "react-tweet": "^3.2.2",
+    "react-youtube": "^10.1.0",
     "tailwindcss": "^4.0.11"
   },
   "devDependencies": {

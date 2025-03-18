@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// store url in config and get there from env
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const signIn = async (username: string, password: string) => {

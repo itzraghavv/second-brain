@@ -1,5 +1,7 @@
 import { NotebookIcon, Share2Icon, Trash2Icon } from "lucide-react";
-
+import YouTube from "react-youtube";
+import getYouTubeID from "get-youtube-id";
+import { Tweet } from "react-tweet";
 interface CardInterface {
   title?: string;
   type: "youtube" | "twitter";
@@ -8,6 +10,13 @@ interface CardInterface {
 }
 
 export const Card = ({ title, type, link }: CardInterface) => {
+  const youtubeOpts = {
+    height: "160",
+    width: "250",
+  };
+
+  const linkId = getYouTubeID(link);
+
   return (
     <div className="bg-white min-w-72 max-w-72 min-h-48 rounded-md shadow-md p-4 border border-slate-200">
       <div className="flex justify-between">
@@ -23,23 +32,14 @@ export const Card = ({ title, type, link }: CardInterface) => {
         </div>
       </div>
       <div className="pt-4">
-        {type === "youtube" && (
-          <iframe
-            className="w-full"
-            src={link?.replace("embed", "watch")} //embed here 
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        )}
+        {type === "youtube" && <YouTube videoId={linkId} opts={youtubeOpts} />}
         {type === "twitter" && (
-          <blockquote className="twitter-tweet">
-            <a href={link}></a>
-          </blockquote>
+          <Tweet id="1901992088268341525"/>
         )}
+        <div className="w-full"></div>
       </div>
     </div>
   );
 };
+
+// https://x.com/Hiteshdotcom/status/1901992088268341525

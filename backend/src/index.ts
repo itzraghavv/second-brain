@@ -81,6 +81,7 @@ app.post("/api/v1/sign-in", async (req, res) => {
 app.post("/api/v1/content", auth, async (req, res) => {
   const title = req.body.title;
   const link = req.body.link;
+  
 
   await ContentModel.create({
     title,
@@ -101,7 +102,7 @@ app.get("/api/v1/content", auth, async (req, res) => {
   }).populate("userId", "username");
 
   res.json({
-    message: content,
+    content,
   });
 });
 

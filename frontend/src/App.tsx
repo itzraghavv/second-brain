@@ -17,9 +17,8 @@ function App() {
             <Route path="/sign-in" element={<SignInPage />} />
             <Route path="/sign-up" element={<SignUpPage />} />
 
-            <Route element={<ProtectedRoute />}>
-              <Route path="/dashboard" element={<DashboardPage />} />
-            </Route>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route element={<ProtectedRoute />}></Route>
           </Routes>
         </AuthProvider>
       </BrowserRouter>
