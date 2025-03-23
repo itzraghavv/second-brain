@@ -21,7 +21,7 @@ const buttonVariants = {
 
 const sizeVariants = {
   sm: "px-4 py-1 rounded-sm",
-  md: "px-6 py-2 rounded-md",
+  md: "p-2 md:px-6 md:py-2 rounded-md",
   lg: "px-8 py-3 rounded-lg",
 };
 
@@ -37,7 +37,7 @@ export const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`${buttonVariants[variant]} ${sizeVariants[size]} ${className} flex justify-center items-center`}
+      className={`${buttonVariants[variant]} ${sizeVariants[size]} ${className} flex text-sm md:text-lg md:font-normal justify-center items-center`}
       disabled={loading}
     >
       <div className="mr-2">{startIcon}</div>

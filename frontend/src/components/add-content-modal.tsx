@@ -1,6 +1,6 @@
 import { XIcon } from "lucide-react";
 import { Input } from "./input";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "./button";
 import { CreatePost } from "../services/create-post";
 
@@ -21,12 +21,20 @@ export const AddContentModal = ({ open, onClick }: ModalProps) => {
     CreatePost(title, type.toLowerCase(), link);
   };
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [open]);
+
   return (
     <div>
       {open && (
-        <div className="w-screen h-screen fixed top-0 left-0 flex justify-center backdrop-filter backdrop-blur-xs bg-opacity-50">
+        <div className="w-screen h-screen fixed top-0 left-0 flex justify-center backdrop-filter backdrop-blur-xs bg-opacity-50 bg-slate-300/40 z-50">
           <div className="flex flex-col justify-center">
-            <div className="bg-white py-2 px-4 rounded-md min-w-72 text-black">
+            <div className="bg-white py-2 px-4 rounded-md min-w-72 text-black shadow-lg">
               <div className="flex justify-end">
                 <div onClick={onClick}>
                   <XIcon className="size-4" />

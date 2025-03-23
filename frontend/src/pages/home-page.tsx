@@ -9,7 +9,6 @@ export const HomePage = () => {
 
   const handleSubmit = () => {
     navigate("/sign-in");
-    console.log("cl");
   };
 
   return (
