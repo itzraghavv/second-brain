@@ -21,7 +21,7 @@ export const DashboardPage = () => {
             setModalOpen(!modalOpen);
           }}
         />
-        <div className="flex justify-between items-center px-2 md:px-4 py-4 md:py-0">
+        <div className="flex justify-between items-center pt-4 px-3 md:px-4 py-4 md:py-0">
           <div>
             <h1 className="text-lg md:text-2xl font-bold">All Notes</h1>
           </div>

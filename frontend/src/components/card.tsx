@@ -27,7 +27,7 @@ export const Card = ({ title, type, link }: CardInterface) => {
           <p>{title}</p>
         </div>
         <div className="flex gap-2 items-center">
-          <a href={link}>
+          <a href={link} target="_blank">
             <Share2Icon />
           </a>
           <Trash2Icon />
